@@ -1,0 +1,42 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Injectable } from '@angular/core';
+import { IonicNativePlugin, cordova } from '@ionic-native/core';
+var SpotifyAuth = /** @class */ (function (_super) {
+    __extends(SpotifyAuth, _super);
+    function SpotifyAuth() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SpotifyAuth.prototype.authorize = function (cfg) { return cordova(this, "authorize", { "sync": false }, arguments); };
+    SpotifyAuth.prototype.forget = function () { return cordova(this, "forget", { "sync": true }, arguments); };
+    SpotifyAuth.pluginName = "SpotifyAuth";
+    SpotifyAuth.plugin = "cordova-spotify-oauth";
+    SpotifyAuth.pluginRef = "cordova.plugins.spotifyAuth";
+    SpotifyAuth.repo = "https://github.com/Festify/cordova-spotify-oauth";
+    SpotifyAuth.install = "ionic cordova plugin add cordova-spotify-oauth --variable LOCAL_STORAGE_KEY=\"SpotifyOAuthData\"";
+    SpotifyAuth.installVariables = ["LOCAL_STORAGE_KEY"];
+    SpotifyAuth.platforms = ["Android", "iOS"];
+    SpotifyAuth = __decorate([
+        Injectable()
+    ], SpotifyAuth);
+    return SpotifyAuth;
+}(IonicNativePlugin));
+export { SpotifyAuth };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvQGlvbmljLW5hdGl2ZS9wbHVnaW5zL3Nwb3RpZnktYXV0aC9uZ3gvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLE9BQU8sRUFBRSxVQUFVLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDM0MsT0FBTyw4QkFBc0MsTUFBTSxvQkFBb0IsQ0FBQzs7SUFrR3ZDLCtCQUFpQjs7OztJQXVCaEQsK0JBQVMsYUFBQyxHQUFXO0lBZXJCLDRCQUFNOzs7Ozs7OztJQXRDSyxXQUFXO1FBRHZCLFVBQVUsRUFBRTtPQUNBLFdBQVc7c0JBbkd4QjtFQW1HaUMsaUJBQWlCO1NBQXJDLFdBQVciLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBQbHVnaW4sIENvcmRvdmEsIElvbmljTmF0aXZlUGx1Z2luIH0gZnJvbSAnQGlvbmljLW5hdGl2ZS9jb3JlJztcblxuLyoqXG4gKiBPQXV0aCBjb25maWd1cmF0aW9uIGRhdGEuXG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgQ29uZmlnIHtcbiAgLyoqIFRoZSBjbGllbnQgSUQgYXMgcGVyIHRoZSBTcG90aWZ5IGRldiBjb25zb2xlLiAqL1xuICBjbGllbnRJZDogc3RyaW5nO1xuXG4gIC8qKiBUaGUgcmVkaXJlY3QgVVJJIGFzIGVudGVyZWQgaW4gdGhlIFNwb3RpZnkgZGV2IGNvbnNvbGUuICovXG4gIHJlZGlyZWN0VXJsOiBzdHJpbmc7XG5cbiAgLyoqXG4gICAqIFNhZmV0eSBtYXJnaW4gdGltZSAoaW4gbWlsbGlzZWNvbmRzKSBmb3IgdGhlIHRva2VuIHJlZnJlc2guXG4gICAqXG4gICAqIFRoZSBwbHVnaW4gYXBwbGllcyBhIHNhZmV0eSBtYXJnaW4gdG8gdGhlIHRva2VuIGxpZmV0aW1lIGluIG9yZGVyXG4gICAqIHRvIGdpdmUgdGhlIHRva2VuIHVzZXIgZW5vdWdoIHRpbWUgdG8gcGVyZm9ybSBhbGwgb3BlcmF0aW9ucyBuZWVkZWQuXG4gICAqXG4gICAqIE90aGVyd2lzZSB0aGUgcGx1Z2luIG1pZ2h0IGhhbmQgb3V0IGEgdG9rZW4gdGhhdCBpcyBhbHJlYWR5IGV4cGlyZWRcbiAgICogYmVmb3JlIGl0IGNvdWxkIGV2ZXIgYmUgdXNlZC5cbiAgICpcbiAgICogVGhlIHNhZmV0eSBtYXJnaW4gZGVmYXVsdHMgdG8gMzBzLlxuICAgKi9cbiAgcmVmcmVzaFNhZmV0eU1hcmdpbj86IG51bWJlcjtcblxuICAvKiogUmVxdWVzdGVkIE9BdXRoIHNjb3Blcy4gKi9cbiAgc2NvcGVzOiBzdHJpbmdbXTtcblxuICAvKiogVGhlIHRva2VuIGV4Y2hhbmdlIFVSTC4gKi9cbiAgdG9rZW5FeGNoYW5nZVVybDogc3RyaW5nO1xuXG4gIC8qKiBUaGUgdG9rZW4gcmVmcmVzaCBVUkwuICovXG4gIHRva2VuUmVmcmVzaFVybDogc3RyaW5nO1xufVxuXG4vKipcbiAqIFRoZSBhdXRob3JpemF0aW9uIGRhdGEuXG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgQXV0aG9yaXphdGlvbkRhdGEge1xuICAvKiogQSB2YWxpZCBhY2Nlc3MgdG9rZW4uICovXG4gIGFjY2Vzc1Rva2VuOiBzdHJpbmc7XG5cbiAgLyoqIFRoZSBlbmNyeXB0ZWQgcmVmcmVzaCB0b2tlbi4gKi9cbiAgZW5jcnlwdGVkUmVmcmVzaFRva2VuOiBzdHJpbmc7XG5cbiAgLyoqIFRoZSBkYXRlIChmcm9tIFVUQywgaW4gbWlsbGlzZWNvbmRzKSB3aGVuIHRoZSBnaXZlbiBhY2Nlc3MgdG9rZW4gZXhwaXJlcy4gKi9cbiAgZXhwaXJlc0F0OiBudW1iZXI7XG59XG5cbi8qKlxuICogQG5hbWUgU3BvdGlmeSBBdXRoXG4gKiBAZGVzY3JpcHRpb25cbiAqIENvcmRvdmEgcGx1Z2luIGZvciBhdXRoZW50aWNhdGluZyB3aXRoIFNwb3RpZnlcbiAqID4gaHR0cHM6Ly9naXRodWIuY29tL0Zlc3RpZnkvY29yZG92YS1zcG90aWZ5LW9hdXRoXG4gKlxuICogQHVzYWdlXG4gKiBgYGB0eXBlc2NyaXB0XG4gKiBpbXBvcnQgeyBTcG90aWZ5QXV0aCB9IGZyb20gJ0Bpb25pYy1uYXRpdmUvc3BvdGlmeS1hdXRoJztcbiAqXG4gKiAvLyBbLi4uXVxuICpcbiAqIGNvbnN0cnVjdG9yKHByaXZhdGUgc3BvdGlmeUF1dGg6IFNwb3RpZnlBdXRoKSB7IH1cbiAqXG4gKiAvLyBbLi4uXVxuICpcbiAqIGNvbnN0IGNvbmZpZyA9IHtcbiAqICAgY2xpZW50SWQ6IFwiPFNQT1RJRlkgQ0xJRU5UIElEPlwiLFxuICogICByZWRpcmVjdFVybDogXCI8UkVESVJFQ1QgVVJMLCBNVVNUIE1BVENIIFdJVEggQVVUSCBFTkRQT0lOVCBBTkQgU1BPVElGWSBERVYgQ09OU09MRT5cIixcbiAqICAgc2NvcGVzOiBbXCJzdHJlYW1pbmdcIl0sIC8vIHNlZSBTcG90aWZ5IERldiBjb25zb2xlIGZvciBhbGwgc2NvcGVzXG4gKiAgIHRva2VuRXhjaGFuZ2VVcmw6IFwiPFVSTCBPRiBUT0tFTiBFWENIQU5HRSBIVFRQIEVORFBPSU5UPlwiLFxuICogICB0b2tlblJlZnJlc2hVcmw6IFwiPFVSTCBPRiBUT0tFTiBSRUZSRVNIIEhUVFAgRU5EUE9JTlQ+XCIsXG4gKiB9O1xuICpcbiAqIC4uLlxuICpcbiAqIHRoaXMuc3BvdGlmeUF1dGguYXV0aG9yaXplKGNvbmZpZylcbiAqICAgLnRoZW4oKHsgYWNjZXNzVG9rZW4sIGV4cGlyZXNBdCB9KSA9PiB7XG4gKiAgICAgY29uc29sZS5sb2coYEdvdCBhbiBhY2Nlc3MgdG9rZW4sIGl0cyAke2FjY2Vzc1Rva2VufSFgKTtcbiAqICAgICBjb25zb2xlLmxvZyhgSXRzIGdvaW5nIHRvIGV4cGlyZSBpbiAke2V4cGlyZXNBdCAtIERhdGUubm93KCl9bXMuYCk7XG4gKiAgIH0pO1xuICpcbiAqIC8vIFsuLi5dXG4gKlxuICogdGhpcy5zcG90aWZ5QXV0aC5mb3JnZXQoKS50aGVuKCgpID0+IGNvbnNvbGUubG9nKFwiV2UncmUgbG9nZ2VkIG91dCFcIikpO1xuICpcbiAqIC8vIFsuLi5dXG4gKiBgYGBcbiAqL1xuQFBsdWdpbih7XG4gIHBsdWdpbk5hbWU6ICdTcG90aWZ5QXV0aCcsXG4gIHBsdWdpbjogJ2NvcmRvdmEtc3BvdGlmeS1vYXV0aCcsXG4gIHBsdWdpblJlZjogJ2NvcmRvdmEucGx1Z2lucy5zcG90aWZ5QXV0aCcsXG4gIHJlcG86ICdodHRwczovL2dpdGh1Yi5jb20vRmVzdGlmeS9jb3Jkb3ZhLXNwb3RpZnktb2F1dGgnLFxuICBpbnN0YWxsOiAnaW9uaWMgY29yZG92YSBwbHVnaW4gYWRkIGNvcmRvdmEtc3BvdGlmeS1vYXV0aCAtLXZhcmlhYmxlIExPQ0FMX1NUT1JBR0VfS0VZPVwiU3BvdGlmeU9BdXRoRGF0YVwiJyxcbiAgaW5zdGFsbFZhcmlhYmxlczogWydMT0NBTF9TVE9SQUdFX0tFWSddLFxuICBwbGF0Zm9ybXM6IFsnQW5kcm9pZCcsICdpT1MnXVxufSlcbkBJbmplY3RhYmxlKClcbmV4cG9ydCBjbGFzcyBTcG90aWZ5QXV0aCBleHRlbmRzIElvbmljTmF0aXZlUGx1Z2luIHtcbiAgLyoqXG4gICAqIE9idGFpbnMgdmFsaWQgYXV0aG9yaXphdGlvbiBkYXRhLlxuICAgKlxuICAgKiBUaGlzIG1ldGhvZCBwZXJmb3JtcyB0aGUgbmVjZXNzYXJ5IHN0ZXBzIGluIG9yZGVyIHRvIG9idGFpbiBhIHZhbGlkXG4gICAqIGFjY2VzcyB0b2tlbi4gSXQgcGVyZm9ybXMgdGhlIE9BdXRoIGRhbmNlIHByb21wdGluZyB0aGUgdXNlciB0byBsb2cgaW4sXG4gICAqIGV4Y2hhbmdlcyB0aGUgb2J0YWluZWQgYXV0aG9yaXphdGlvbiBjb2RlIGZvciBhbiBhY2Nlc3MgYW5kIGEgcmVmcmVzaFxuICAgKiB0b2tlbiwgY2FjaGVzIHRob3NlLCBhbmQgcmV0dXJucyBib3RoIHRvIHRoZSBkZXZlbG9wZXIuXG4gICAqXG4gICAqIFdoZW4gaXQgaXMgaW52b2tlZCBhZ2FpbiwgaXQgd2lsbCBmaXJzdCBjaGVjayB3aGV0aGVyIHRoZSBjYWNoZWQgYWNjZXNzXG4gICAqIHRva2VuIGlzIHN0aWxsIHZhbGlkIChpbmNsdWRpbmcgYSBjb25maWd1cmFibGUgc2FmZXR5IG1hcmdpbikgYW5kIHRoZVxuICAgKiBzY29wZXMgZXF1YWwsIGFuZCByZXR1cm4gdGhlIHRva2VuIGRpcmVjdGx5IGlmIHRoYXQgaXMgdGhlIGNhc2UuIE90aGVyd2lzZSxcbiAgICogdGhlIG1ldGhvZCB3aWxsIHRyYW5zcGFyZW50bHkgcmVmcmVzaCB0aGUgdG9rZW4gKG9yIG9idGFpbiBhIG5ldyBvbmUgaWZcbiAgICogdGhlIHNjb3BlcyBjaGFuZ2VkKSBhbmQgcmV0dXJuIHRoYXQuXG4gICAqXG4gICAqIEJvdHRvbSBsaW5lIC0gYWx3YXlzIGNhbGwgdGhpcyBpZiB5b3UgbmVlZCBhIHZhbGlkIGFjY2VzcyB0b2tlbiBpbiB5b3VyIGNvZGUuXG4gICAqXG4gICAqIEBwYXJhbSBjZmcge0NvbmZpZ30gY29uZmlndXJhdGlvblxuICAgKiBAcmV0dXJuIHtQcm9taXNlPEF1dGhvcml6YXRpb25EYXRhPn1cbiAgICovXG4gIEBDb3Jkb3ZhKHtcbiAgICBzeW5jOiBmYWxzZVxuICB9KVxuICBhdXRob3JpemUoY2ZnOiBDb25maWcpOiBQcm9taXNlPEF1dGhvcml6YXRpb25EYXRhPiB7XG4gICAgcmV0dXJuO1xuICB9XG5cbiAgLyoqXG4gICAqIFJlbW92ZXMgYWxsIGNhY2hlZCBkYXRhIHNvIHRoYXQgYGF1dGhvcml6ZWAgcGVyZm9ybXMgdGhlIGZ1bGxcbiAgICogb2F1dGggZGFuY2UgYWdhaW4uXG4gICAqXG4gICAqIFRoaXMgaXMgYWtpbiB0byBhIFwibG9nb3V0XCIuXG4gICAqXG4gICAqIEByZXR1cm4ge3ZvaWR9XG4gICAqL1xuICBAQ29yZG92YSh7XG4gICAgc3luYzogdHJ1ZVxuICB9KVxuICBmb3JnZXQoKTogdm9pZCB7IH1cbn1cbiJdfQ==

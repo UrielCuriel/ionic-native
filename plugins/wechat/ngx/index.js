@@ -1,0 +1,46 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Injectable } from '@angular/core';
+import { IonicNativePlugin, cordova } from '@ionic-native/core';
+var Wechat = /** @class */ (function (_super) {
+    __extends(Wechat, _super);
+    function Wechat() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Wechat.prototype.isInstalled = function () { return cordova(this, "isInstalled", {}, arguments); };
+    Wechat.prototype.share = function (params) { return cordova(this, "share", {}, arguments); };
+    Wechat.prototype.auth = function (scope, state) { return cordova(this, "auth", {}, arguments); };
+    Wechat.prototype.sendPaymentRequest = function (params) { return cordova(this, "sendPaymentRequest", {}, arguments); };
+    Wechat.prototype.jumpToWechat = function (url) { return cordova(this, "jumpToWechat", {}, arguments); };
+    Wechat.prototype.chooseInvoiceFromWX = function (params) { return cordova(this, "chooseInvoiceFromWX", {}, arguments); };
+    Wechat.pluginName = "Wechat";
+    Wechat.plugin = "cordova-plugin-wechat";
+    Wechat.pluginRef = "Wechat";
+    Wechat.repo = "https://github.com/xu-li/cordova-plugin-wechat.git";
+    Wechat.install = "cordova plugin add cordova-plugin-wechat --variable wechatappid=YOUR_WECHAT_APPID";
+    Wechat.installVariables = ["wechatappid"];
+    Wechat.platforms = ["Android", "iOS"];
+    Wechat = __decorate([
+        Injectable()
+    ], Wechat);
+    return Wechat;
+}(IonicNativePlugin));
+export { Wechat };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvQGlvbmljLW5hdGl2ZS9wbHVnaW5zL3dlY2hhdC9uZ3gvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLE9BQU8sRUFBRSxVQUFVLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDM0MsT0FBTyw4QkFBc0MsTUFBTSxvQkFBb0IsQ0FBQzs7SUFpQzVDLDBCQUFpQjs7OztJQWtCM0MsNEJBQVc7SUE4Qlgsc0JBQUssYUFBQyxNQUFXO0lBYWpCLHFCQUFJLGFBQUMsS0FBVSxFQUFFLEtBQVU7SUF5QjNCLG1DQUFrQixhQUFDLE1BQVc7SUE0QjlCLDZCQUFZLGFBQUMsR0FBVztJQWtCeEIsb0NBQW1CLGFBQUMsTUFBVzs7Ozs7Ozs7SUFwSXBCLE1BQU07UUFEbEIsVUFBVSxFQUFFO09BQ0EsTUFBTTtpQkFsQ25CO0VBa0M0QixpQkFBaUI7U0FBaEMsTUFBTSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGFibGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IENvcmRvdmEsIElvbmljTmF0aXZlUGx1Z2luLCBQbHVnaW4gfSBmcm9tICdAaW9uaWMtbmF0aXZlL2NvcmUnO1xuXG4vKipcbiAqIEBuYW1lIFdlY2hhdFxuICogQGRlc2NyaXB0aW9uXG4gKiBBIGNvcmRvdmEgcGx1Z2luLCBhIEpTIHZlcnNpb24gb2YgV2VjaGF0IFNES1xuICpcbiAqIEB1c2FnZVxuICogYGBgdHlwZXNjcmlwdFxuICogaW1wb3J0IHsgV2VjaGF0IH0gZnJvbSAnQGlvbmljLW5hdGl2ZS93ZWNoYXQvbmd4JztcbiAqXG4gKlxuICogY29uc3RydWN0b3IocHJpdmF0ZSB3ZWNoYXQ6IFdlY2hhdCkgeyB9XG4gKlxuICogLi4uXG4gKlxuICpcbiAqIHRoaXMud2VjaGF0LmZ1bmN0aW9uTmFtZSgnSGVsbG8nLCAxMjMpXG4gKiAgIC50aGVuKChyZXM6IGFueSkgPT4gY29uc29sZS5sb2cocmVzKSlcbiAqICAgLmNhdGNoKChlcnJvcjogYW55KSA9PiBjb25zb2xlLmVycm9yKGVycm9yKSk7XG4gKlxuICogYGBgXG4gKi9cbkBQbHVnaW4oe1xuICBwbHVnaW5OYW1lOiAnV2VjaGF0JyxcbiAgcGx1Z2luOiAnY29yZG92YS1wbHVnaW4td2VjaGF0JyxcbiAgcGx1Z2luUmVmOiAnV2VjaGF0JyxcbiAgcmVwbzogJ2h0dHBzOi8vZ2l0aHViLmNvbS94dS1saS9jb3Jkb3ZhLXBsdWdpbi13ZWNoYXQuZ2l0JyxcbiAgaW5zdGFsbDogJ2NvcmRvdmEgcGx1Z2luIGFkZCBjb3Jkb3ZhLXBsdWdpbi13ZWNoYXQgLS12YXJpYWJsZSB3ZWNoYXRhcHBpZD1ZT1VSX1dFQ0hBVF9BUFBJRCcsXG4gIGluc3RhbGxWYXJpYWJsZXM6IFsnd2VjaGF0YXBwaWQnXSxcbiAgcGxhdGZvcm1zOiBbJ0FuZHJvaWQnLCAnaU9TJ11cbn0pXG5ASW5qZWN0YWJsZSgpXG5leHBvcnQgY2xhc3MgV2VjaGF0IGV4dGVuZHMgSW9uaWNOYXRpdmVQbHVnaW4ge1xuICBTY2VuZToge1xuICAgIFNFU1NJT046IDA7IC8vIOiBiuWkqeeVjOmdolxuICAgIFRJTUVMSU5FOiAxOyAvLyDmnIvlj4vlnIhcbiAgICBGQVZPUklURTogMjsgLy8g5pS26JePXG4gIH07XG5cbiAgVHlwZToge1xuICAgIEFQUDogMTtcbiAgICBFTU9USU9OOiAyO1xuICAgIEZJTEU6IDM7XG4gICAgSU1BR0U6IDQ7XG4gICAgTVVTSUM6IDU7XG4gICAgVklERU86IDY7XG4gICAgV0VCUEFHRTogNztcbiAgfTtcblxuICBAQ29yZG92YSgpXG4gIGlzSW5zdGFsbGVkKCk6IFByb21pc2U8YW55PiB7XG4gICAgcmV0dXJuO1xuICB9XG5cbiAgLyoqXG4gICAqIFNoYXJlIGEgbWVzc2FnZSB0byB3ZWNoYXQgYXBwXG4gICAqXG4gICAqIEBleGFtcGxlXG4gICAqIDxjb2RlPlxuICAgKiB0aGlzLndlY2hhdC5zaGFyZSh7XG4gICAqICAgICBtZXNzYWdlOiB7XG4gICAqICAgICAgICB0aXRsZTogXCJNZXNzYWdlIFRpdGxlXCIsXG4gICAqICAgICAgICBkZXNjcmlwdGlvbjogXCJNZXNzYWdlIERlc2NyaXB0aW9uKG9wdGlvbmFsKVwiLFxuICAgKiAgICAgICAgbWVkaWFUYWdOYW1lOiBcIk1lZGlhIFRhZyBOYW1lKG9wdGlvbmFsKVwiLFxuICAgKiAgICAgICAgdGh1bWI6IFwiaHR0cDovL1lPVVJfVEhVTUJOQUlMX0lNQUdFXCIsXG4gICAqICAgICAgICBtZWRpYToge1xuICAgKiAgICAgICAgICAgIHR5cGU6IFdlY2hhdC5UeXBlLldFQlBBR0UsICAgLy8gd2VicGFnZVxuICAgKiAgICAgICAgICAgIHdlYnBhZ2VVcmw6IFwiaHR0cHM6Ly9naXRodWIuY29tL3h1LWxpL2NvcmRvdmEtcGx1Z2luLXdlY2hhdFwiICAgIC8vIHdlYnBhZ2VcbiAgICogICAgICAgIH1cbiAgICogICAgfSxcbiAgICogICAgc2NlbmU6IHRoaXMud2VjaGF0LlNjZW5lLlRJTUVMSU5FICAgLy8gc2hhcmUgdG8gVGltZWxpbmVcbiAgICogfS50aGVuKCgpID0+IHtcbiAgICogICAgICAgY29uc29sZS5sb2coJ3NoYXJlIHN1Y2Nlc3MnKTtcbiAgICogICAgfSlcbiAgICogICAgLmNhdGNoKGVycm9yID0+IHtcbiAgICogICAgICAgY29uc29sZS5sb2coZXJyb3IpO1xuICAgKiAgICB9KTtcbiAgICogPC9jb2RlPlxuICAgKi9cbiAgQENvcmRvdmEoKVxuICBzaGFyZShwYXJhbXM6IGFueSk6IFByb21pc2U8YW55PiB7XG4gICAgcmV0dXJuO1xuICB9XG5cbiAgLyoqXG4gICAqIFNlbmRpbmcgYW4gYXV0aCByZXF1ZXN0IHRvIFdlY2hhdFxuICAgKlxuICAgKiBAZXhhbXBsZVxuICAgKiA8Y29kZT5cbiAgICogdGhpcy53ZWNoYXQuYXV0aC50aGVuKChyZXMpID0+IHsgYWxlcnQocmVzLmNvZGUpOyB9KTtcbiAgICogPC9jb2RlPlxuICAgKi9cbiAgQENvcmRvdmEoKVxuICBhdXRoKHNjb3BlOiBhbnksIHN0YXRlOiBhbnkpOiBQcm9taXNlPGFueT4ge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIC8qKlxuICAgKiBTZW5kIGEgcGF5bWVudCByZXF1ZXN0XG4gICAqXG4gICAqIEBsaW5rIGh0dHBzOi8vcGF5LndlaXhpbi5xcS5jb20vd2lraS9kb2MvYXBpL2FwcC5waHA/Y2hhcHRlcj05XzFcbiAgICogQGV4YW1wbGVcbiAgICogPGNvZGU+XG4gICAqIHZhciBwYXJhbXMgPSB7XG4gICAqICAgICBtY2hfaWQ6ICcxMDAwMDEwMCcsIC8vIG1lcmNoYW50IGlkXG4gICAqICAgICBwcmVwYXlfaWQ6ICd3eDIwMTQxMTEwMTYzOTUwN2NiZjZmZmQ4YjA3Nzk5NTA4NzQnLCAvLyBwcmVwYXkgaWQgcmV0dXJuZWQgZnJvbSBzZXJ2ZXJcbiAgICogICAgIG5vbmNlOiAnMWFkZDFhMzBhYzg3YWEyZGI3MmY1N2EyMzc1ZDhmZWMnLCAvLyBub25jZSBzdHJpbmcgcmV0dXJuZWQgZnJvbSBzZXJ2ZXJcbiAgICogICAgIHRpbWVzdGFtcDogJzE0Mzk1MzEzNjQnLCAvLyB0aW1lc3RhbXBcbiAgICogICAgIHNpZ246ICcwQ0IwMTUzM0I4QzFFRjEwMzA2NTE3NEY1MEJDQTAwMScsIC8vIHNpZ25lZCBzdHJpbmdcbiAgICogfTtcbiAgICogdGhpcy53ZWNoYXQuc2VuZFBheW1lbnRSZXF1ZXN0KHBhcmFtcykudGhlbigoKSA9PiB7XG4gICAqICAgICBjb25zb2xlLmxvZyhcIlN1Y2Nlc3NcIik7XG4gICAqIH0pLmNhdGNoKGVycm9yID0+IHtcbiAgICogICAgIGNvbnNvbGUubG9nKGVycm9yKTtcbiAgICogfSk7XG4gICAqIDwvY29kZT5cbiAgICovXG4gIEBDb3Jkb3ZhKClcbiAgc2VuZFBheW1lbnRSZXF1ZXN0KHBhcmFtczogYW55KTogUHJvbWlzZTxhbnk+IHtcbiAgICByZXR1cm47XG4gIH1cblxuICAvKipcbiAgICoganVtcFRvQml6UHJvZmlsZSDvvIjot7PovazliLDmn5DkuKrlvq7kv6HlhazkvJflj7fvvIkyMDE2LTExLTExIOa1i+ivleaYr+WkseaViOeahO+8jOWbp1xuICAgKlxuICAgKiBAbGluayBodHRwczovL3NlZ21lbnRmYXVsdC5jb20vYS8xMTkwMDAwMDA3MjA0NjI0XG4gICAqIEBsaW5rIGh0dHBzOi8vc2VnbWVudGZhdWx0LmNvbS9xLzEwMTAwMDAwMDM5MDc3OTZcbiAgICogQGV4YW1wbGVcbiAgICogPGNvZGU+XG4gICAqIHZhciBwYXJhbXMgPSB7XG4gICAqICAgICBpbmZvOiAnZ2hfeHh4eHh4eCcsIC8vIOWFrOS8l+W4kOWPt+WOn+Wni0lEXG4gICAqICAgICB0eXBlOiAgJ05vcm1hbCcgLy8g5pmu6YCa5Y+3XG4gICAqIH1cbiAgICogb3JcbiAgICogdmFyIHBhcmFtcyA9IHtcbiAgICogICAgIGluZm86ICdleHRNc2cnLCAvLyDnm7jlhbPnmoTnoazku7bkuoznu7TnoIHkuLJcbiAgICogICAgIHR5cGU6ICAnRGV2aWNlJyAvLyDnoazku7blj7dcbiAgICogfTtcbiAgICogdGhpcy53ZWNoYXQuanVtcFRvQml6UHJvZmlsZShwYXJhbXMpLnRoZW4oKCk9PiB7XG4gICAqICAgICBjb25zb2xlLmxvZyhcIlN1Y2Nlc3NcIik7XG4gICAqIH0pLmNhdGNoKGVycm9yID0+IHtcbiAgICogICAgIGNvbnNvbGUubG9nKGVycm9yKTtcbiAgICogfSk7XG4gICAqIDwvY29kZT5cbiAgICovXG4gIEBDb3Jkb3ZhKClcbiAganVtcFRvV2VjaGF0KHVybDogc3RyaW5nKTogUHJvbWlzZTxhbnk+IHtcbiAgICByZXR1cm47XG4gIH1cblxuICAvKipcbiAgICogY2hvb3NlSW52b2ljZUZyb21XWCBleHE6Y2hvb3NlIGludm9pY2VzIGZyb20gV2VjaGF0IGNhcmQgbGlzdFxuICAgKlxuICAgKiBAZXhhbXBsZVxuICAgKiA8Y29kZT5cbiAgICogcGFyYW1zOiBzaWduVHlwZSwgY2FyZFNpZ24sIG5vbmNlU3RyLCB0aW1lU3RhbXAgIGFsbCByZXF1aXJlZFxuICAgKiB0aGlzLndlY2hhdC5jaG9vc2VJbnZvaWNlRnJvbVdYKHBhcmFtcykudGhlbigoKSA9PiB7XG4gICAqICAgICBjb25zb2xlLmxvZyhcIlN1Y2Nlc3NcIik7XG4gICAqIH0pLmNhdGNoKGVycm9yID0+IHtcbiAgICogICAgIGNvbnNvbGUubG9nKGVycm9yKTtcbiAgICogfSk7XG4gICAqIDwvY29kZT5cbiAgICovXG4gIEBDb3Jkb3ZhKClcbiAgY2hvb3NlSW52b2ljZUZyb21XWChwYXJhbXM6IGFueSk6IFByb21pc2U8YW55PiB7XG4gICAgcmV0dXJuO1xuICB9XG59XG4iXX0=
