@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Cordova, CordovaCheck, IonicNativePlugin, Plugin, getPromise } from '@ionic-native/core';
+import {
+  Cordova,
+  CordovaCheck,
+  IonicNativePlugin,
+  Plugin,
+  getPromise
+} from '@ionic-native/core';
 
 export interface PrintOptions {
   /**
@@ -12,6 +18,11 @@ export interface PrintOptions {
    * Only supported on iOS.
    */
   printerId?: string;
+  /**
+   * The network URL of the printer.
+   * Only supported on iOS.
+   */
+  printer?: string;
 
   /**
    * Specifies the duplex mode to use for the print job.
@@ -74,14 +85,12 @@ export interface PrintOptions {
 })
 @Injectable()
 export class Printer extends IonicNativePlugin {
-
   /**
    * Checks whether the device is capable of printing (uses `check()` internally)
    * @returns {Promise<boolean>}
    */
   isAvailable(): Promise<boolean> {
-    return this.check()
-      .then((res: any) => Promise.resolve(res.avail));
+    return this.check().then((res: any) => Promise.resolve(res.avail));
   }
 
   /**
@@ -91,10 +100,9 @@ export class Printer extends IonicNativePlugin {
   @CordovaCheck()
   check(): Promise<any> {
     return getPromise<any>((resolve: Function) => {
-      Printer.getPlugin()
-        .check((avail: boolean, count: any) => {
-          resolve({ avail, count });
-        });
+      Printer.getPlugin().check((avail: boolean, count: any) => {
+        resolve({ avail, count });
+      });
     });
   }
 
@@ -120,5 +128,4 @@ export class Printer extends IonicNativePlugin {
   print(content: string | HTMLElement, options?: PrintOptions): Promise<any> {
     return;
   }
-
 }
